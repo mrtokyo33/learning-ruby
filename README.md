@@ -1,6 +1,6 @@
 # learning-ruby
 
-Welcome to my "Learning Ruby" repository! This is where I document my journey of learning Ruby, from the basics to advanced topics. I'll share challenges, solutions, and small projects along the way.
+Welcome to my "Learning Ruby" repository! This is where I document my journey of learning Ruby, from the basics to advanced topics. Along the way, I will share challenges, solutions, small projects, and explore how Ruby can be used for solving real-world problems, including **physics** and **math** projects.
 
 ## 🧑‍💻 What’s Inside?
 
@@ -9,12 +9,14 @@ Welcome to my "Learning Ruby" repository! This is where I document my journey of
 - **Advanced Topics**: Metaprogramming, design patterns, and performance optimizations.
 - **Security and Hacking Projects**: Focusing on vulnerabilities, exploiting weaknesses, and building security tools.
 - **Small Projects**: Fun, practical Ruby projects in various domains.
+- **Physics & Math Projects**: Using Ruby to solve physics and mathematical problems, from simulations to numerical methods.
 
 ## 🚀 My Goal
 
 - **Master Ruby**: Become proficient in Ruby, from basics to advanced topics.
 - **Build Useful Projects**: Create and share projects that solve real-world problems or explore security.
 - **Explore Hacking and Security**: Learn ethical hacking and create security-related tools and scripts.
+- **Apply Ruby to Physics & Math**: Use Ruby to model physical systems, solve math problems, and experiment with computational methods.
 
 ## 🌱 Contributing
 
@@ -28,3 +30,4 @@ Feel free to contribute, suggest improvements, or fork this repository to share 
 4. **Web Development with Ruby**: Rails, Sinatra.
 5. **Security Concepts**: Vulnerabilities, ethical hacking.
 6. **Small Security Projects**: Exploits, security tools.
+7. **Physics & Math**: Implementing simulations, solving equations, and applying Ruby to computational methods (numerical integration, optimization, etc.).

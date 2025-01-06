@@ -61,10 +61,87 @@ shoes = {
     "winter" => "boots"
 }
 
-shoes["summer"]     #=> "sandals"
+shoes["summer"]                 #=> "sandals"
 
 # If you try to access a key that doesn’t exist in the hash, it will return nil:
 
-shoes["hiking"]     #=> nil
+shoes["hiking"]                 #=> nil
+
+# Sometimes, this behavior can be problematic for you if silently returning a nil value could potentially wreak havoc in your program
+# Luckily, hashes have a fetch method that will raise an error when you try to access a key that is not in your hash.
+
+shoes.fetch("hiking")           #=> keyError: key not found: "hiking"
+
+shoes.fetch("hiking", "hiking boots")       #=> "hiking boots"
 
 
+
+
+# Adding and changing data
+shoes["fall"] = "sneakers"
+
+shoes  #=> {"summer"=>"sandals", "winter"=>"boots", "fall"=>"sneakers"}
+
+# You can also use this approach to change the value of an existing key.
+shoes["summer"] = "flip-flops"
+
+shoes  #=> {"summer"=>"flip-flops", "winter"=>"boots", "fall"=>"sneakers"}
+
+
+# Removing Data
+shoes.delete("summer")  #=> "flip-flops"
+
+
+
+# Methods
+# Hashes respond to many of the same methods as arrays do since they both employ Ruby’s Enumerable module
+# A couple of useful methods that are specific to hashes are the #keys and #values methods, which very unsurprisingly return the keys and values of a hash, respectively. Note that both of these methods return arrays
+
+
+books = {
+  "Infinite Jest" => "David Foster Wallace",
+  "Into the Wild" => "Jon Krakauer"
+}
+
+books.keys      #=> ["Infinite Jest", "Into the Wild"]
+books.values    #=> ["David Foster Wallace", "Jon Krakauer"]
+
+
+
+# Merging two hashes
+# Occasionally, you’ll come across a situation where two hashes wish to come together in holy union. Luckily, there’s a method for that. 
+# (No ordained minister required!)
+
+hash1 = { "a" => 100, "b" => 200 }
+hash2 = { "b" => 254, "c" => 300 }
+hash1.merge(hash2)      #=> { "a" => 100, "b" => 254, "c" => 300 }
+
+
+# Notice that the values from the hash getting merged in (in this case, the values in hash2) overwrite the values of the hash getting… uh, merged at (hash1 here) when the two hashes have a key that’s the same.
+# https://docs.ruby-lang.org/en/3.3/Hash.html
+
+
+
+# Symbols as hash keys
+# we mostly used strings for hash keys, but in the real world, you’ll almost always see symbols (like :this_guy) used as keys
+#   This is predominantly because symbols are far more performant than strings in Ruby, but they also allow for a much cleaner syntax when defining hashes. Behold the beauty:
+
+# 'Rocket' syntax
+american_cars = {
+  :chevrolet => "Corvette",
+  :ford => "Mustang",
+  :dodge => "Ram"
+}
+# 'Symbols' syntax
+japanese_cars = {
+  honda: "Accord",
+  toyota: "Corolla",
+  nissan: "Altima"
+}
+
+# That last example brings a tear to the eye, doesn’t it? Notice that the hash rocket and the colon that represents a symbol have been mashed together
+# This unfortunately only works for symbols, though, so don’t try { 9: "value" } or you’ll get a syntax error
+
+# When you use the cleaner ‘symbols’ syntax to create a hash, you’ll still need to use the standard symbol syntax when you’re trying to access a value
+american_cars[:ford]    #=> "Mustang"
+japanese_cars[:honda]   #=> "Accord"
